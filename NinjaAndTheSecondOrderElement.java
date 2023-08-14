@@ -39,6 +39,7 @@ public class NinjaAndTheSecondOrderElement {
     }
     public static void main(String[] args) {
         int arr[] = Array.takeinput_1D();
-        System.out.println(Array.output_1D(arr));
+        int ans[] = getSecondOrderElements(arr.length, arr);
+        Array.output_1D(ans);
     }
 }

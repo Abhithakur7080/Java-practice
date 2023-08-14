@@ -142,7 +142,7 @@ public class Array {
         return matrix;
     }
 
-    public static int output_1D(int arr[]) {
+    public static void output_1D(int arr[]) {
         for(int i : arr) {
             System.out.print(i + " ");
         }
