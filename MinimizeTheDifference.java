@@ -14,7 +14,7 @@ public class MinimizeTheDifference {
 
         int minDiff = A[n-1] - A[0];
 
-        for(int i=1; i<n; i++){
+        for(int i=1; i<n; i++){ // T=O(n)
             int diff = A[i] - K;
             if(diff<0){
                 continue;
