@@ -9,9 +9,11 @@ public class SlotGame {
 		for(int i=0; i<4; i++){
 			if(original.charAt(i)==guess.charAt(i)){
 				point = point + 2;
-				original = original.substring(0, i) + "I" + original.substring(i + 1);
+				// original = original.substring(0, i) + "I" + original.substring(i + 1);
+				original = original.replace(original.charAt(i), 'I');
                 System.out.println("original: "+original);
-                guess = guess.substring(0, i) + "I" + guess.substring(i + 1);
+                // guess = guess.substring(0, i) + "I" + guess.substring(i + 1);
+				guess = guess.replace(guess.charAt(i), 'I');
                 System.out.println("guess: "+guess);
 			}
 		}
@@ -26,9 +28,11 @@ public class SlotGame {
 				for(int j=0; j<4; j++){
 					if(guess.charAt(i) == original.charAt(j)){
 						point = point + 1;
-						original = original.substring(0, j) + "I" + original.substring(j + 1);
+						// original = original.substring(0, j) + "I" + original.substring(j + 1);
+						original = original.replace(original.charAt(j), 'I');
                         System.out.println("original-1: "+original);
-                        guess = guess.substring(0, i) + "I" + guess.substring(i + 1);
+                        // guess = guess.substring(0, i) + "I" + guess.substring(i + 1);
+						guess = guess.replace(guess.charAt(i), 'I');
                         System.out.println("guess-1: "+guess);
 						break;
 					}
