@@ -41,10 +41,72 @@ public class SlotGame {
 		}
 		return point;
 	}
+	public static int helper(char c){
+		if(c == 'B'){
+			return 0;
+		}
+		else if(c == 'G'){
+			return 1;
+		}
+		else if(c == 'R'){
+			return 2;
+		}
+		else{
+			return 3;
+		}
+	}
+	public static int slotScore1(String original, String guess){
+		int point = 0;
+		int count[] = {0, 0, 0, 0};
+		//perfect hit
+		for(int i=0; i<4; i++){
+			if(original.charAt(i) == guess.charAt(i)){
+				point += 2;
+			}
+			else{
+				int color = helper(original.charAt(i));
+				count[color]++;
+			}
+		}
+		// normal hit
+		for(int i=0; i<4; i++){
+			int color = helper(guess.charAt(i));
+			if(count[color]>0 && guess.charAt(i) != original.charAt(i)){
+				point++;
+				count[color]--;
+			}
+		}
+		return point;
+	}
     public static void main(String[] args) {
         String original = scanner.s.next();
         String guess = scanner.s.next();
-        int ans = slotScore(original, guess);
+        // int ans = slotScore(original, guess);
+		int ans = slotScore1(original, guess);
         System.out.println(ans);
     }
 }
+	// public static int slotScore(String original, String guess) {
+	// 	// Write your code here.
+	// 	if(guess.length()==0 || original.length()==0){
+	// 		 return 0;
+	// 	}
+	// 	 int count = 0;
+	// 	 Set<Character> originalChars = new HashSet<>();  // To track used characters
+	// 	 Set<Character> guessChars = new HashSet<>();
+    //     for (int i = 0; i < original.length(); i++) {
+    //         if (original.charAt(i) == guess.charAt(i)){
+    //             count += 2;
+    //         } else {
+	// 			originalChars.add(original.charAt(i));
+	// 			guessChars.add(guess.charAt(i));
+	// 		}
+    //     }
+	// 	for (char c : guessChars) {
+    //     	if (originalChars.contains(c)) {
+    //      count++;
+    //      originalChars.remove(c); // Remove the character from originalChars to avoid double counting
+    // 		}
+	// 	}
+	// 	return count;
+	// }
