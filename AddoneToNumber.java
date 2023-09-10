@@ -1,7 +1,7 @@
 import java.util.* ;
 class Solution
 {
-public static ArrayList<Integer> addOneToNumber(ArrayList<Integer> arr)
+public ArrayList<Integer> addOneToNumber(ArrayList<Integer> arr)
     {
         // Write your code here.
         //if 0 is in first and array morethan 1 size like arr=[0,1,2]->remove-0->arr=[1,2]
@@ -22,6 +22,10 @@ public static ArrayList<Integer> addOneToNumber(ArrayList<Integer> arr)
     }
 }
 public class AddoneToNumber {
-    
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        ArrayList<Integer> arr = Arraylist.takeinput_1D();
+        Arraylist.output_1D(sol.addOneToNumber(arr));
+    }
 }
 

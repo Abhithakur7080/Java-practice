@@ -21,15 +21,15 @@ public class Arraylist {
     }
 
     public static ArrayList<ArrayList<Integer>> takeinput_2D(){
-        System.out.println("Enter row of Arrays");
+        System.out.println("Enter no of row of Arrays");
         int rows = s.nextInt();
-        System.out.println("Enter column of Arrays");
+        System.out.println("Enter no of column of Arrays");
         int col = s.nextInt();
         ArrayList<ArrayList<Integer>> mat = new ArrayList<>();
         for(int i=0; i<rows; i++) {
             ArrayList<Integer> row = new ArrayList<>();
+            System.out.print("Enter " + i + "th row element with saparated space: ");
             for(int j=0; j<col; j++){
-                System.out.print("Enter index-" + i + "," + j + " element: ");
                 row.add(j, s.nextInt());
             }
         }
